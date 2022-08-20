@@ -21,6 +21,9 @@ export default function SingleAlbum(props) {
                             song={song}
                             track={index + 1}
                             artist={props.album.artist.name}
+                            clickPlay={props.clickPlay}
+                            currentSong={props.currentSong}
+                            playing={props.playing}
                         />
                     ))}
                 </tbody>
