@@ -6,8 +6,8 @@ export default function Song(props) {
             <td>
                 <i
                     className={
-                        props.currentSong.id === props.song.id && props.playing
-                            ? 'fa fa-pause-circle'
+                        props.currentSong.id === props.song.id
+                            ? ''
                             : 'fa fa-play-circle'
                     }
                     onClick={() => props.clickPlay(props.song)}

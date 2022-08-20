@@ -30,7 +30,7 @@ const Main = () => {
     const [currentSong, setCurrentSong] = React.useState({});
     //handle clicking song
     function handleClickSong(song) {
-        setPlaying(!playing);
+        setPlaying(true);
         setCurrentSong(song);
         const audio = document.getElementById('audioPlayer');
         //would probably need an if statement here to check if we are clicking on a new song or the old songs play/pause button
@@ -45,17 +45,17 @@ const Main = () => {
     function handlePlayPause() {
         const audio = document.getElementById('audioPlayer');
         setPlaying(!playing);
-        playing ? audio.play() : audio.pause();
+        playing ? audio.pause() : audio.play();
     }
     function handleNextLast(num) {
         //TODO: refactor this funky logic
         const songArray = selectedAlbum.songs;
         const songIndex = songArray.indexOf(currentSong);
         if (songIndex === 0 && num === -1)
-            setCurrentSong(songArray[songArray.length + num]);
+            handleClickSong(songArray[songArray.length + num]);
         else if (songIndex === songArray.length - 1 && num === 1)
-            setCurrentSong(songArray[0]);
-        else setCurrentSong(songArray[songIndex + num]);
+            handleClickSong(songArray[0]);
+        else handleClickSong(songArray[songIndex + num]);
     }
 
     return (
