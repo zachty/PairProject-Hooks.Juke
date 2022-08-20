@@ -6,8 +6,8 @@ const Song = require('./song');
 // require each of your models here...
 
 // ...and give them some nice associations here!
-Album.belongsTo(Artist);
 Artist.hasMany(Album);
+Album.belongsTo(Artist);
 
 Song.belongsTo(Artist);
 Artist.hasMany(Song);

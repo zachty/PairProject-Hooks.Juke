@@ -4,8 +4,7 @@ const { Album, Artist, Song } = require('../db');
 // connect your API routes here!
 router.get('/albums', async (req, res, next) => {
     try {
-        console.log('hellow world');
-        const data = await Album.findAll({ inlcude: Artist });
+        const data = await Album.findAll({ include: Artist });
         res.send(data);
     } catch (error) {
         console.error(error);
